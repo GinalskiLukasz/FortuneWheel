@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="696.0" prefWidth="1036.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameWindowController">
+   <children>
+      <Pane fx:id="wheelPane" layoutX="10.0" layoutY="186.0" prefHeight="425.0" prefWidth="350.0">
+         <children>
+            <ImageView fx:id="image" disable="true" fitHeight="350.0" fitWidth="350.0" layoutY="56.0" onMouseDragged="#wheelDragged" onMousePressed="#wheelPressed" onMouseReleased="#wheelReleased" pickOnBounds="true">
+               <image>
+                  <Image url="@wheel.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="messageTextField" layoutX="845.0" layoutY="659.0" minHeight="40.0" onAction="#messageTextField_KeyPressed" prefHeight="40.0" prefWidth="233.0" />
+      <WebView fx:id="webViewMessages" layoutX="847.0" layoutY="430.0" prefHeight="227.0" prefWidth="281.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="847.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="430.0" />
+      <ImageView fx:id="sendImageView" fitHeight="25.0" fitWidth="25.0" onMouseReleased="#sendImageView_MouseReleased" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <image>
+            <Image url="@send.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="welcomeLabel" layoutX="870.0" layoutY="380.0" prefHeight="47.0" prefWidth="258.0" text="Chat">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="14.0" layoutY="668.0" text="GRACZ A" />
+      <Pane layoutX="10.0" layoutY="30.0" prefHeight="146.0" prefWidth="350.0">
+         <children>
+            <Label fx:id="A_totalpoints" layoutX="270.0" layoutY="14.0" prefHeight="27.0" prefWidth="79.0" text="0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="B_totalpoints_label" layoutX="9.0" layoutY="41.0" prefHeight="27.0" prefWidth="258.0" text="Przeciwnik - punkty łącznie:" textFill="BLUE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="B_totalpoints" layoutX="270.0" layoutY="41.0" prefHeight="27.0" prefWidth="79.0" text="0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="A_roundpoints_label" layoutX="9.0" layoutY="68.0" prefHeight="27.0" prefWidth="258.0" text="GRACZ A - punkty w rundzie:" textFill="BLUE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="B_roundpoints_label" layoutX="9.0" layoutY="90.0" prefHeight="27.0" prefWidth="258.0" text="Przeciwnik - punkty w rundzie:" textFill="BLUE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="A_roundpoints" layoutX="231.0" layoutY="68.0" prefHeight="27.0" prefWidth="79.0" text="0">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="B_roundpoints" layoutX="231.0" layoutY="90.0" prefHeight="27.0" prefWidth="79.0" text="0">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="A_totalpoints_label" layoutX="9.0" layoutY="14.0" prefHeight="27.0" prefWidth="258.0" text="GRACZ A - punkty łącznie:" textFill="BLUE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <GridPane fx:id="gridPane" hgap="5.0" layoutX="410.0" layoutY="29.0" style="-fx-background-color: Grey;" vgap="5.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="45.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Rectangle fx:id="rectangle" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" />
+            <Rectangle fx:id="rectangle1" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="1" />
+            <Rectangle fx:id="rectangle2" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="2" />
+            <Rectangle fx:id="rectangle21" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="3" />
+            <Rectangle fx:id="rectangle211" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="4" />
+            <Rectangle fx:id="rectangle3" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="5" />
+            <Rectangle fx:id="rectangle11" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="70.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="6" />
+            <Rectangle fx:id="rectangle22" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="120.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="7" />
+            <Rectangle fx:id="rectangle212" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="170.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="8" />
+            <Rectangle fx:id="rectangle2111" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="220.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="9" />
+            <Rectangle fx:id="rectangle111" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="320.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="10" />
+            <Rectangle fx:id="rectangle221" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="370.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="11" />
+            <Rectangle fx:id="rectangle2121" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="420.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="12" />
+            <Rectangle fx:id="rectangle21111" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" layoutX="470.0" layoutY="20.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="13" />
+            <Rectangle fx:id="rectangle2111118" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111117" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111116" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111115" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111114" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111113" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111112" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111111" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle2111110" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle211119" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle211118" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle211117" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle211116" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle211115" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+            <Rectangle fx:id="rectangle211114" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle211113" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle211112" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle211111" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111127" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111126" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111125" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111124" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111123" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111122" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111121" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111120" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111119" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="12" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111118" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="13" GridPane.rowIndex="2" />
+            <Rectangle fx:id="rectangle21111117" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111116" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111115" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111114" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111113" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111112" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111111" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle21111110" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle2111119" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle211111919" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle211111918" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle211111917" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="11" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle211111916" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="12" GridPane.rowIndex="3" />
+            <Rectangle fx:id="rectangle211111915" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="55.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="45.0" GridPane.columnIndex="13" GridPane.rowIndex="3" />
+            <Label fx:id="label" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label37" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label36" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label35" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label34" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label33" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label32" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label31" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label30" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label29" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label28" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2721" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2720" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2719" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2718" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2717" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2716" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2715" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2714" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2713" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2712" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2711" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2710" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label279" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label278" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label277" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label276" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label275" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label274" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label273" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label272" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label271" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label27" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label26" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label25" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label248" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label247" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label246" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label245" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label244" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label243" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label242" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label241" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label24" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label23" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label22" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label21" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label20" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label19" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label18" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label17" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label16" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label15" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label14" GridPane.columnIndex="11" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label13" GridPane.columnIndex="12" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="label12" GridPane.columnIndex="13" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="43.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Pane fx:id="inputPane" layoutX="491.0" layoutY="292.0" />
+      <Pane fx:id="choosePane" layoutX="401.0" layoutY="437.0" prefHeight="118.0" prefWidth="412.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#02de39" height="173.0" layoutY="-72.0" stroke="BLACK" strokeType="INSIDE" width="393.0" />
+            <Label layoutX="15.0" layoutY="-70.0" text="Wybierz, co chcesz zrobić:" textFill="#0d2cf2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="goWhellButton" layoutX="16.0" layoutY="-33.0" mnemonicParsing="false" onAction="#goWhell" prefHeight="25.0" prefWidth="121.0" text="Kręcę kołem" />
+            <Button fx:id="givePasswordButton" disable="true" layoutX="16.0" layoutY="-4.0" mnemonicParsing="false" onAction="#givePassword" prefHeight="25.0" prefWidth="121.0" text="Zgaduję hasło" />
+            <Button fx:id="buyButton" disable="true" layoutX="16.0" layoutY="25.0" mnemonicParsing="false" onAction="#buy" prefHeight="25.0" prefWidth="121.0" text="Kupuję samogłoskę" />
+            <Button fx:id="newRound" disable="true" layoutX="250.0" layoutY="69.0" mnemonicParsing="false" onAction="#startNewRound" text="Zacznij kolejną rundę" />
+         </children>
+      </Pane>
+      <Label fx:id="infoLabel" layoutX="382.0" layoutY="303.0" prefHeight="47.0" prefWidth="715.0" text="Zakręć kołem!">
+         <font>
+            <Font name="Serif Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="19.0" layoutY="16.0">
+         <children>
+            <Label fx:id="turnLabel" layoutX="73.0" layoutY="1.0" prefHeight="27.0" prefWidth="25.0" text=" 1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="RUNDA:" textFill="#0d2cf2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="resultLabel" layoutX="125.0" layoutY="616.0" prefHeight="52.0" prefWidth="219.0" text="Wynik" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Pane layoutX="410.0" layoutY="552.0" prefHeight="118.0" prefWidth="372.0">
+         <children>
+            <Label fx:id="B_roundpoints_label1" layoutY="1.0" prefHeight="27.0" prefWidth="258.0" text="Twoje nagrody:" textFill="BLUE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageSkuter" fitHeight="75.0" fitWidth="88.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@skuter.jpg" />
+               </image></ImageView>
+            <ImageView fx:id="imageAGD" fitHeight="73.0" fitWidth="98.0" layoutX="129.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@pralka.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageSummer" fitHeight="73.0" fitWidth="98.0" layoutX="229.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wakacje.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Polygon fill="DODGERBLUE" layoutX="369.0" layoutY="427.0" points="-50.0, 40.0, 50.0, 40.0, 0.0, -60.0" rotate="-90.0" scaleX="0.3" scaleY="0.4" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="856.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@chatSymbol.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

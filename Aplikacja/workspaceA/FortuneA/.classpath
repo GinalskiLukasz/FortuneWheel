@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="Sterownik JDBC/ojdbc6_g.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/gibon/Desktop/JAVA PLUS/Fortune/Aplikacja/workspaceA/FortuneA/src/jsoup-1.11.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
